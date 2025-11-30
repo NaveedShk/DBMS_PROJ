@@ -32,7 +32,7 @@ except mysql.errors.InterfaceError:
 # Function to create new Database
 def createDB():
     cursor = conn.cursor()
-    cursor.execute(f"CREATE DATABASE {DATABASE}")
+    cursor.execute(f"CREATE DATABASE IF NOT EXISTS {DATABASE}")
     cursor.close()
 
 # Function to run a sql script
